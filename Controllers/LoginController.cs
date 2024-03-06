@@ -52,7 +52,7 @@ namespace esercizioS18L1.Controllers
                         if (reader.HasRows)
                         {
                             FormsAuthentication.SetAuthCookie(model.Username, false);
-                            return RedirectToAction("ListaCliente", "Cliente");
+                            return RedirectToAction("Index", "Home");
                         }
                         else
                         {
@@ -76,7 +76,7 @@ namespace esercizioS18L1.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Login");
+            return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]

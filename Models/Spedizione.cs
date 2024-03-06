@@ -18,19 +18,9 @@ namespace esercizioS18L1.Models
         public string CittaDestinazione { get; set; }
         public decimal Costo { get; set; }
         public decimal PesoKg { get; set; }
-        [Required]
-        [Display(Name = "Data Spedizione")]
-        [DataType(DataType.DateTime)]
-        public DateTime DataSpedizione { get; set; }
-
-        [Required]
-        [Display(Name = "Data Stimata Consegna")]
-        [DataType(DataType.DateTime)]
-        public DateTime DataStimataConsegna { get; set; }
-
-        public List<Stato> Stati { get; set; }
+        public string DataSpedizione { get; set; }
+        public string DataStimataConsegna { get; set; }
     }
-
     public class Stato
     {
         public int Id { get; set; }
@@ -40,4 +30,14 @@ namespace esercizioS18L1.Models
         public string Descrizione { get; set; }
         public DateTime DataOraAggiornamento { get; set; }
     }
+
+    public class DettaglioSpedizione
+    {
+        public Spedizione Spedizione { get; set; }
+        public List<Stato> Stato { get; set; }
+    }
+
+
 }
+
+

@@ -12,8 +12,7 @@ namespace esercizioS18L1.Models
 {
     public class SiteRole : RoleProvider
     {
-        public override string ApplicationName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
+        public override string ApplicationName { get; set; }
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
             throw new NotImplementedException();
@@ -41,24 +40,23 @@ namespace esercizioS18L1.Models
 
         public override string[] GetRolesForUser(string username)
         {
-            string conn = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
-            SqlConnection sqlConnection = new SqlConnection(conn);
-
-            sqlConnection.Open();
-
-            string query = "SELECT Role FROM Login WHERE Username = @Username";
-
-            SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            sqlCommand.Parameters.AddWithValue("Username", username);
-
-            SqlDataReader reader = sqlCommand.ExecuteReader();
-
+            string connString = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
             List<string> roles = new List<string>();
 
-            while (reader.Read())
+            using (SqlConnection connection = new SqlConnection(connString))
             {
-                string role = reader["Role"].ToString();
-                roles.Add(role);
+                string query = "SELECT Role FROM Login WHERE Username = @Username";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Username", username);
+
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        roles.Add(reader["Role"].ToString());
+                    }
+                }
             }
 
             return roles.ToArray();

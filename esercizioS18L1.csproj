@@ -123,6 +123,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\SpedizioneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -149,6 +150,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Style.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -188,10 +190,17 @@
     <Content Include="Views\Cliente\ModificaCliente.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Login\Register.cshtml" />
+    <Content Include="Views\Spedizione\ListaSpedizione.cshtml" />
+    <Content Include="Views\Spedizione\AggiungiSpedizione.cshtml" />
+    <Content Include="Views\Spedizione\DettaglioSpedizioneCliente.cshtml" />
+    <Content Include="Views\Spedizione\DettaglioSpedizione.cshtml" />
+    <Content Include="Views\Spedizione\CercaSpedizione.cshtml" />
+    <Content Include="Views\Spedizione\AggiungiStato.cshtml" />
+    <Content Include="Views\Spedizione\ModificaSpedizione.cshtml" />
+    <Content Include="Views\Spedizione\ModificaStato.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Spedizione\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

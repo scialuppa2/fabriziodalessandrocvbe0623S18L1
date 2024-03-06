@@ -1,0 +1,39 @@
+﻿@font-face {
+    font-family: GreatVibes;
+    src: url('/static_files/fonts/gv.ttf');
+}
+
+body {
+    background-image: url('https://images.pexels.com/photos/2658450/pexels-photo-2658450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.greatVibesFont {
+    font-family: GreatVibes;
+}
+
+.navbar-brand img {
+    width: 100%;
+    max-width: 640px;
+    position: absolute;
+    transition: all 300ms linear;
+    transform-origin: 0% 0%;
+}
+
+@media screen and (max-width:956px) {
+    .navbar-brand img {
+        width: 100%;
+        max-width: 240px;
+        position: relative;
+    }
+}
+
+img.consize {
+    transform: translateY(-20px) scale(0.25);
+}
+
+#mainNav {
+    transition: background 300ms linear;
+}
