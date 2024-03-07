@@ -37,3 +37,18 @@ img.consize {
 #mainNav {
     transition: background 300ms linear;
 }
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7); /* Nero con opacità del 50% */
+    padding: 1em;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+thead {
+    border-bottom: 2px solid white; /* Modifica lo stile e il colore del bordo superiore */
+}
+
+

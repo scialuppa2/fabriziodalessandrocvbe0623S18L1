@@ -8,7 +8,7 @@
 {
     @Html.AntiForgeryToken()
     <div class="container body-content">
-        <h2 class="text-center">Inserisci Spedizione</h2>
+        <h2 class="text-center">Modifica Spedizione</h2>
 
         <div class="text-right mt-3 mb-3">
             <a href="@Url.Action("ListaSpedizione", "Spedizione")" class="btn btn-primary">Lista delle Spedizioni</a>
@@ -17,7 +17,7 @@
         @Html.HiddenFor(model => model.ClienteId)
         @Html.HiddenFor(model => model.Mittente)
 
-        <div class="row justify-content-center container">
+        <div class="row justify-content-center container overlay text-light">
             <div class="d-flex flex-column align-items-center">
 
                 <div>
@@ -68,12 +68,14 @@
                     @Html.ValidationMessageFor(model => model.DataStimataConsegna, "", new { @class = "text-danger" })
                 </div>
 
+                <div class="text-center mt-3">
+                    <input type="submit" value="Aggiorna Spedizione" class="btn btn-success" />
+                </div>
+
             </div>
         </div>
 
-        <div class="text-center mt-3">
-            <input type="submit" value="Aggiorna Spedizione" class="btn btn-warning" />
-        </div>
+        
     </div>
 }
 

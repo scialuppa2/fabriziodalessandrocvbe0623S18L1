@@ -9,7 +9,7 @@
         <a href="@Url.Action("AggiungiCliente", "Cliente")" class="btn btn-primary">Aggiungi Cliente</a>
     </div>
     <h2 class="text-center">Lista Aziende</h2>
-    <table class="table table-bordered">
+    <table class="table overlay text-light">
         <thead>
             <tr>
                 <th>Id</th>
@@ -30,9 +30,9 @@
                     <td>@azienda.IndirizzoSede</td>
                     <td>@azienda.CittaSede</td>
                     <td class="d-flex justify-content-evenly">
-                        @Html.ActionLink("Aggiungi Spedizione", "AggiungiSpedizione", "Spedizione", new { ClienteId = azienda.Id, Mittente = azienda.PartitaIVA }, new { @class = "btn btn-success btn-sm" })
-                        @Html.ActionLink("Modifica Azienda", "ModificaCliente", "Cliente", new { Id = azienda.Id }, new { @class = "btn btn-warning btn-sm" })
-                        @Html.ActionLink("Elimina Azienda", "EliminaCliente", "Cliente", new { Id = azienda.Id }, new { @class = "btn btn-danger btn-sm" })
+                        @Html.ActionLink("Aggiungi Spedizione", "AggiungiSpedizione", "Spedizione", new { ClienteId = azienda.Id, Mittente = azienda.PartitaIVA }, new { @class = "btn btn-primary btn-sm" })
+                        @Html.ActionLink("Modifica", "ModificaCliente", "Cliente", new { Id = azienda.Id }, new { @class = "btn btn-success btn-sm" })
+                        @Html.ActionLink("Elimina", "EliminaCliente", "Cliente", new { Id = azienda.Id }, new { @class = "btn btn-danger btn-sm" })
                     </td>
                 </tr>
             }
@@ -40,7 +40,7 @@
     </table>
 
     <h2 class="text-center">Lista Privati</h2>
-    <table class="table table-bordered">
+    <table class="table overlay text-light">
         <thead>
             <tr>
                 <th>Id</th>
@@ -65,9 +65,9 @@
                     <td>@privato.Residenza</td>
                     <td>@privato.DataDiNascita</td>
                     <td class="d-flex justify-content-evenly">
-                        @Html.ActionLink("Aggiungi Spedizione", "AggiungiSpedizione", "Spedizione", new { ClienteId = privato.Id, Mittente = privato.CodiceFiscale }, new { @class = "btn btn-success btn-sm" })
-                        @Html.ActionLink("Modifica Cliente", "ModificaCliente", "Cliente", new { Id = privato.Id }, new { @class = "btn btn-warning btn-sm" })
-                        @Html.ActionLink("Elimina Cliente", "EliminaCliente", "Cliente", new { Id = privato.Id }, new { @class = "btn btn-danger btn-sm" })
+                        @Html.ActionLink("Aggiungi Spedizione", "AggiungiSpedizione", "Spedizione", new { ClienteId = privato.Id, Mittente = privato.CodiceFiscale }, new { @class = "btn btn-primary btn-sm" })
+                        @Html.ActionLink("Modifica", "ModificaCliente", "Cliente", new { Id = privato.Id }, new { @class = "btn btn-success btn-sm" })
+                        @Html.ActionLink("Elimina", "EliminaCliente", "Cliente", new { Id = privato.Id }, new { @class = "btn btn-danger btn-sm" })
                     </td>
                 </tr>
             }
